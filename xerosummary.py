@@ -34,7 +34,7 @@ def refresh_access_token(refresh_token: str) -> dict:
 #-----------------same for every case till now------------------------
 
 def fetch_bank_summary_json(access_token: str, tenant_id: str, from_date: str, to_date: str) -> dict:
-    url = f"{ACCOUNTING_BASE}/Reports/BankSummary"
+    url = f"{ACCOUNTING_BASE}/Reports/BankSummary" #This is where you'll be pointing your API
     headers = {
         "Authorization": f"Bearer {access_token}",
         "xero-tenant-id": tenant_id,
@@ -66,4 +66,5 @@ if __name__ == "__main__":
 
     # Print full JSON nicely
     print(json.dumps(payload, indent=2))
+
 
